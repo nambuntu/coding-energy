@@ -50,7 +50,6 @@ export class ConsumptionUpdateComponent implements OnInit {
         this.isSaving = true;
         this.consumption.dateCreated = moment(this.dateCreated, DATE_TIME_FORMAT);
         if (this.consumption.id !== undefined) {
-            this.subscribeToSaveResponse(this.consumptionService.update(this.consumption));
         } else {
             this.subscribeToSaveResponse(this.consumptionService.create(this.consumption));
         }

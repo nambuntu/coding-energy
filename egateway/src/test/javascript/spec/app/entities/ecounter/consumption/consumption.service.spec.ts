@@ -39,15 +39,6 @@ describe('Service Tests', () => {
                 req.flush({ id: null });
             });
 
-            it('should update a Consumption', () => {
-                service.update(new Consumption(123)).subscribe(received => {
-                    expect(received.body.id).toEqual(123);
-                });
-
-                const req = httpMock.expectOne({ method: 'PUT' });
-                req.flush({ id: 123 });
-            });
-
             it('should return a Consumption', () => {
                 service.find(123).subscribe(received => {
                     expect(received.body.id).toEqual(123);
